@@ -29,7 +29,10 @@ public class PrioListe {
     }
 
     public Patient getNextPatient() {
-        return myList.remove(0);    // gibt sofort das Element zurück, das an Index 0 der Liste entfernt wird
+        if(myList.isEmpty()) {  // exception vermeiden -> falls ArrayList myList leer ist
+            return null;
+        }
+            return myList.remove(0);    // gibt sofort das Element zurück, das an Index 0 der Liste entfernt wird
     }
 
     public int getPosition(Patient p) {
